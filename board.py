@@ -26,6 +26,7 @@ class Board():
             row = []
 
     def __str__(self):
-        for square in self.squares:
-            print(square)
+        for row in self.squares:
+            for square in row:
+                print(square)
         return '\n'
