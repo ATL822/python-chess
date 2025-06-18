@@ -16,11 +16,14 @@ def determineSquareColor(col, row):
 class Board():
     def __init__(self):
         self.squares = []
+        row = []
         dims = (100, 100)
-        for squareRow in range(0,8):
-            for squareCol in range(0,8):
-                pos = (squareCol, squareRow)
-                self.squares.append(Square.BoardSquare(determineSquareColor(squareCol, squareRow), pos, dims))
+        for rowNum in range(0,8):
+            for colNum in range(0,8):
+                pos = (colNum, rowNum)
+                row.append(Square.BoardSquare(determineSquareColor(colNum, rowNum), pos, dims))
+            self.squares.append(row)
+            row = []
 
     def __str__(self):
         for square in self.squares:

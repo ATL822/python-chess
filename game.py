@@ -16,8 +16,9 @@ while running:
         if event.type == pygame.QUIT:
             running = False
 
-    for square in gameBoard.squares:
-        pygame.draw.rect(surface=screen,color=square.color,rect=(square.pos[0]*100, square.pos[1]*100, 100, 100))
+    for row in gameBoard.squares:
+        for square in row:
+            pygame.draw.rect(surface=screen,color=square.color,rect=(square.pos[0]*100, square.pos[1]*100, 100, 100))
 
     # flip() the display to put your work on screen
     pygame.display.flip()
